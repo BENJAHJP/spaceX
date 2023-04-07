@@ -5,6 +5,8 @@ import com.example.spacex.data.remote.dto.CapsuleDtoItem
 import com.example.spacex.data.remote.dto.CompanyDto
 import com.example.spacex.data.remote.dto.CoreDto
 import com.example.spacex.data.remote.dto.CoreDtoItem
+import com.example.spacex.data.remote.dto.Crew
+import com.example.spacex.data.remote.dto.DragonDto
 import com.example.spacex.data.remote.dto.LaunchDto
 import com.example.spacex.data.remote.dto.LaunchDtoItem
 import retrofit2.http.GET
@@ -30,9 +32,11 @@ interface SpacexApi {
         @Path("id") id: String
     ): CapsuleDtoItem
 
+    //get company info
     @GET("v4/company")
     suspend fun getCompanyInfo(): CompanyDto
 
+    //get cores
     @GET("v4/cores")
     suspend fun getAllCores(): CoreDto
 
@@ -41,5 +45,21 @@ interface SpacexApi {
         @Path("id") id: String
     ): CoreDtoItem
 
+    //get crews
+    @GET("v4/crew")
+    suspend fun getAllCrews(): Crew
 
+    @GET("v4/crew/{id}")
+    suspend fun getCrewById(
+        @Path("id") id: String
+    ): Crew
+
+    //get dragons
+    @GET("v4/dragons")
+    suspend fun getAllDragons(): DragonDto
+
+    @GET("v4/dragons/{id}")
+    suspend fun getDragonById(
+        @Path("id") id: String
+    ): Crew
 }
