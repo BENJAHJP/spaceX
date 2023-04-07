@@ -17,6 +17,7 @@ import com.example.spacex.data.remote.dto.LandpadDtoItem
 import com.example.spacex.data.remote.dto.LaunchDto
 import com.example.spacex.data.remote.dto.LaunchDtoItem
 import com.example.spacex.data.remote.dto.LaunchPadDto
+import com.example.spacex.data.remote.dto.LaunchPadDtoItem
 import com.example.spacex.data.remote.dto.PayloadDto
 import com.example.spacex.data.remote.dto.PayloadDtoItem
 import com.example.spacex.data.remote.dto.RoadsterDto
@@ -88,8 +89,8 @@ class SpacexRepositoryImpl @Inject constructor(
         return spacexApi.getAllLaunchPads()
     }
 
-    override suspend fun getLaunchPadById(id: String): LaunchDtoItem {
-        return spacexApi.getLaunchesById(id)
+    override suspend fun getLaunchPadById(id: String): LaunchPadDtoItem {
+        return spacexApi.getLaunchPadById(id)
     }
 
     override suspend fun getAllPayloads(): PayloadDto {

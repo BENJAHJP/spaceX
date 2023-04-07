@@ -16,6 +16,7 @@ import com.example.spacex.data.remote.dto.LandpadDtoItem
 import com.example.spacex.data.remote.dto.LaunchDto
 import com.example.spacex.data.remote.dto.LaunchDtoItem
 import com.example.spacex.data.remote.dto.LaunchPadDto
+import com.example.spacex.data.remote.dto.LaunchPadDtoItem
 import com.example.spacex.data.remote.dto.PayloadDto
 import com.example.spacex.data.remote.dto.PayloadDtoItem
 import com.example.spacex.data.remote.dto.RoadsterDto
@@ -95,7 +96,7 @@ interface SpacexApi {
     @GET("v4/launchpads/{id}")
     suspend fun getLaunchPadById(
         @Path("id") id: String
-    ): LaunchDtoItem
+    ): LaunchPadDtoItem
 
     //get payloads
     @GET("v4/payloads")
