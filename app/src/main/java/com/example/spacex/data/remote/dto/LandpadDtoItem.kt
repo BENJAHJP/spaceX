@@ -1,5 +1,7 @@
 package com.example.spacex.data.remote.dto
 
+import com.example.spacex.domain.model.LandPadModel
+
 data class LandpadDtoItem(
     val details: String,
     val full_name: String,
@@ -17,3 +19,23 @@ data class LandpadDtoItem(
     val type: String,
     val wikipedia: String
 )
+
+fun LandpadDtoItem.toLandPadModel(): LandPadModel{
+    return LandPadModel(
+        details = details,
+        fullName = full_name,
+        id = id,
+        images = images,
+        landingAttempts = landing_attempts,
+        landingSuccesses = landing_successes,
+        latitude = latitude,
+        launches = launches,
+        locality = locality,
+        longitude = longitude,
+        name = name,
+        region = region,
+        status = status,
+        type = type,
+        wikipedia = wikipedia
+    )
+}
