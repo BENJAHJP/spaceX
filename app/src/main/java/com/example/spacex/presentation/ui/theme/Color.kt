@@ -1,4 +1,4 @@
-package com.example.spacex.ui.theme
+package com.example.spacex.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

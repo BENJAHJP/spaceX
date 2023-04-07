@@ -1,4 +1,4 @@
-package com.example.spacex.ui.theme
+package com.example.spacex.presentation.ui.theme
 
 import android.app.Activity
 import android.os.Build

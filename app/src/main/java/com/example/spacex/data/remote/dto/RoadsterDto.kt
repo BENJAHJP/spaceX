@@ -1,0 +1,31 @@
+package com.example.spacex.data.remote.dto
+
+data class RoadsterDto(
+    val apoapsis_au: Double,
+    val details: String,
+    val earth_distance_km: Double,
+    val earth_distance_mi: Double,
+    val eccentricity: Double,
+    val epoch_jd: Double,
+    val flickr_images: List<String>,
+    val id: String,
+    val inclination: Double,
+    val launch_date_unix: Int,
+    val launch_date_utc: String,
+    val launch_mass_kg: Int,
+    val launch_mass_lbs: Int,
+    val longitude: Double,
+    val mars_distance_km: Double,
+    val mars_distance_mi: Double,
+    val name: String,
+    val norad_id: Int,
+    val orbit_type: String,
+    val periapsis_arg: Double,
+    val periapsis_au: Double,
+    val period_days: Double,
+    val semi_major_axis_au: Double,
+    val speed_kph: Double,
+    val speed_mph: Double,
+    val video: String,
+    val wikipedia: String
+)
