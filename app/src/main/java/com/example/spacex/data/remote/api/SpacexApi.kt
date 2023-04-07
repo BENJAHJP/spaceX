@@ -8,6 +8,8 @@ import com.example.spacex.data.remote.dto.CoreDtoItem
 import com.example.spacex.data.remote.dto.Crew
 import com.example.spacex.data.remote.dto.DragonDto
 import com.example.spacex.data.remote.dto.DragonDtoItem
+import com.example.spacex.data.remote.dto.HistoryDto
+import com.example.spacex.data.remote.dto.HistoryDtoItem
 import com.example.spacex.data.remote.dto.LandpadDto
 import com.example.spacex.data.remote.dto.LandpadDtoItem
 import com.example.spacex.data.remote.dto.LaunchDto
@@ -15,6 +17,13 @@ import com.example.spacex.data.remote.dto.LaunchDtoItem
 import com.example.spacex.data.remote.dto.LaunchPadDto
 import com.example.spacex.data.remote.dto.PayloadDto
 import com.example.spacex.data.remote.dto.PayloadDtoItem
+import com.example.spacex.data.remote.dto.RoadsterDto
+import com.example.spacex.data.remote.dto.RocketDto
+import com.example.spacex.data.remote.dto.RocketDtoItem
+import com.example.spacex.data.remote.dto.ShipDto
+import com.example.spacex.data.remote.dto.ShipDtoItem
+import com.example.spacex.data.remote.dto.StarLinkDto
+import com.example.spacex.data.remote.dto.StarLinkDtoItem
 import retrofit2.http.GET
 import retrofit2.http.Path
 
@@ -91,10 +100,48 @@ interface SpacexApi {
     @GET("v4/payloads")
     suspend fun getAllPayloads(): PayloadDto
 
-    @GET("v4/launchpads/{id}")
+    @GET("v4/payloads/{id}")
     suspend fun getPayloadById(
         @Path("id") id: String
     ): PayloadDtoItem
 
-    //
+    //get roadster
+    @GET("v4/roadster")
+    suspend fun getRoadster(): RoadsterDto
+
+    //get rockets
+    @GET("v4/rockets")
+    suspend fun getAllRockets(): RocketDto
+
+    @GET("v4/rockets/{id}")
+    suspend fun getRocketById(
+        @Path("id") id: String
+    ): RocketDtoItem
+
+    //get ships
+    @GET("v4/ships")
+    suspend fun getAllShips(): ShipDto
+
+    @GET("v4/ships/{id}")
+    suspend fun getShipById(
+        @Path("id") id: String
+    ): ShipDtoItem
+
+    //get starlink
+    @GET("v4/starlink")
+    suspend fun getAllStarLinks(): StarLinkDto
+
+    @GET("v4/starlink/{id}")
+    suspend fun getStarlinkById(
+        @Path("id") id: String
+    ): StarLinkDtoItem
+
+    //get history
+    @GET("v4/history")
+    suspend fun getAllHistory(): HistoryDto
+
+    @GET("v4/history/{id}")
+    suspend fun getHistoryById(
+        @Path("id") id: String
+    ): HistoryDtoItem
 }
