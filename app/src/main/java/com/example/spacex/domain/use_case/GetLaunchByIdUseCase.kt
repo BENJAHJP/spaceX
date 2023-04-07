@@ -10,14 +10,14 @@ import retrofit2.HttpException
 import java.io.IOException
 import javax.inject.Inject
 
-class GetAllLaunchesUseCase @Inject constructor(
+class GetLaunchByIdUseCase @Inject constructor(
     private val repository: SpacexRepository
 ) {
-    operator fun invoke(): Flow<Resource<List<LaunchModel>>> = flow {
+    operator fun invoke(id: String): Flow<Resource<LaunchModel>> = flow {
         try {
             emit(Resource.Loading())
-            val launches = repository.getAllLaunches().map { it.toLaunchModel() }
-            emit(Resource.Success(launches))
+            val launch = repository.getLaunchesById(id).toLaunchModel()
+            emit(Resource.Success(launch))
         } catch (e: HttpException){
             emit(Resource.Error("An unknown error occurred"))
         } catch (e: IOException){
