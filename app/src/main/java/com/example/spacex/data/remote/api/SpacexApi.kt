@@ -6,6 +6,8 @@ import com.example.spacex.data.remote.dto.CompanyDto
 import com.example.spacex.data.remote.dto.CoreDto
 import com.example.spacex.data.remote.dto.CoreDtoItem
 import com.example.spacex.data.remote.dto.Crew
+import com.example.spacex.data.remote.dto.CrewDto
+import com.example.spacex.data.remote.dto.CrewDtoItem
 import com.example.spacex.data.remote.dto.DragonDto
 import com.example.spacex.data.remote.dto.DragonDtoItem
 import com.example.spacex.data.remote.dto.HistoryDto
@@ -62,12 +64,12 @@ interface SpacexApi {
 
     //get crews
     @GET("v4/crew")
-    suspend fun getAllCrews(): Crew
+    suspend fun getAllCrews(): CrewDto
 
     @GET("v4/crew/{id}")
     suspend fun getCrewById(
         @Path("id") id: String
-    ): Crew
+    ): CrewDtoItem
 
     //get dragons
     @GET("v4/dragons")
