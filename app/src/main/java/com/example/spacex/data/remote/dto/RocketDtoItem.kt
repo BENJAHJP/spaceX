@@ -1,5 +1,7 @@
 package com.example.spacex.data.remote.dto
 
+import com.example.spacex.domain.model.RocketModel
+
 data class RocketDtoItem(
     val active: Boolean,
     val boosters: Int,
@@ -24,3 +26,30 @@ data class RocketDtoItem(
     val type: String,
     val wikipedia: String
 )
+
+fun RocketDtoItem.toRocketModel(): RocketModel{
+    return RocketModel(
+        active = active,
+        boosters = boosters,
+        company = company,
+        costPerLaunch = cost_per_launch,
+        country = country,
+        description = description,
+        diameter = diameter,
+        engines = engines,
+        firstFlight = first_flight,
+        firstStage = first_stage,
+        flickrImages = flickr_images,
+        height = height,
+        id = id,
+        landingLegs = landing_legs,
+        mass = mass,
+        name = name,
+        payloadWeights = payload_weights,
+        secondStage = second_stage,
+        stages = stages,
+        successRatePct = success_rate_pct,
+        type = type,
+        wikipedia = wikipedia
+    )
+}
