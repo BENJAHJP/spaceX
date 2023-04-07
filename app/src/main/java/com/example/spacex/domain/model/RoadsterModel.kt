@@ -1,3 +1,31 @@
 package com.example.spacex.domain.model
 
-data class RoadsterModel()
+data class RoadsterModel(
+    val apoapsisAu: Double,
+    val details: String,
+    val earthDistanceKm: Double,
+    val earthDistanceMi: Double,
+    val eccentricity: Double,
+    val epochJd: Double,
+    val flickrImages: List<String>,
+    val id: String,
+    val inclination: Double,
+    val launchDateUnix: Int,
+    val launchDateUtc: String,
+    val launchMassKg: Int,
+    val launchMassLbs: Int,
+    val longitude: Double,
+    val marsDistanceKm: Double,
+    val marsDistanceMi: Double,
+    val name: String,
+    val noradId: Int,
+    val orbitType: String,
+    val periapsisArg: Double,
+    val periapsisAu: Double,
+    val periodDays: Double,
+    val semiMajorAxisAu: Double,
+    val speedKph: Double,
+    val speedMph: Double,
+    val video: String,
+    val wikipedia: String
+)

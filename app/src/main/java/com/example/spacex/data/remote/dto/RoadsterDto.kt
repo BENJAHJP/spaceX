@@ -1,5 +1,7 @@
 package com.example.spacex.data.remote.dto
 
+import com.example.spacex.domain.model.RoadsterModel
+
 data class RoadsterDto(
     val apoapsis_au: Double,
     val details: String,
@@ -29,3 +31,35 @@ data class RoadsterDto(
     val video: String,
     val wikipedia: String
 )
+
+fun RoadsterDto.toRoadSterModel(): RoadsterModel{
+    return RoadsterModel(
+        apoapsisAu = apoapsis_au,
+        details = details,
+        earthDistanceKm = earth_distance_km,
+        earthDistanceMi = earth_distance_mi,
+        eccentricity = eccentricity,
+        epochJd = epoch_jd,
+        flickrImages = flickr_images,
+        id = id,
+        inclination = inclination,
+        launchDateUnix = launch_date_unix,
+        launchDateUtc = launch_date_utc,
+        launchMassKg = launch_mass_kg,
+        launchMassLbs = launch_mass_lbs,
+        longitude = longitude,
+        marsDistanceKm = mars_distance_km,
+        marsDistanceMi = mars_distance_mi,
+        name = name,
+        noradId = norad_id,
+        orbitType = orbit_type,
+        periapsisArg = periapsis_arg,
+        periapsisAu = periapsis_au,
+        periodDays = period_days,
+        semiMajorAxisAu = semi_major_axis_au,
+        speedKph = speed_kph,
+        speedMph = speed_mph,
+        video = video,
+        wikipedia = wikipedia
+    )
+}
