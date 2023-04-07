@@ -16,6 +16,7 @@ import com.example.spacex.data.remote.dto.LandpadDtoItem
 import com.example.spacex.data.remote.dto.LaunchDto
 import com.example.spacex.data.remote.dto.LaunchDtoItem
 import com.example.spacex.data.remote.dto.LaunchPadDto
+import com.example.spacex.data.remote.dto.LaunchPadDtoItem
 import com.example.spacex.data.remote.dto.PayloadDto
 import com.example.spacex.data.remote.dto.PayloadDtoItem
 import com.example.spacex.data.remote.dto.RoadsterDto
@@ -50,7 +51,7 @@ interface SpacexRepository {
     suspend fun getLandPadById(id: String): LandpadDtoItem
 
     suspend fun getAllLaunchPads(): LaunchPadDto
-    suspend fun getLaunchPadById(id: String): LaunchDtoItem
+    suspend fun getLaunchPadById(id: String): LaunchPadDtoItem
 
     suspend fun getAllPayloads(): PayloadDto
     suspend fun getPayloadById(id: String): PayloadDtoItem
