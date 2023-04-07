@@ -1,4 +1,4 @@
-package com.example.spacex.data.remote.repository
+package com.example.spacex.domain.repository
 
 import com.example.spacex.data.remote.dto.CapsuleDto
 import com.example.spacex.data.remote.dto.CapsuleDtoItem
