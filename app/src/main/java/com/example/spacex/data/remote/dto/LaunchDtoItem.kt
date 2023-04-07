@@ -1,5 +1,7 @@
 package com.example.spacex.data.remote.dto
 
+import com.example.spacex.domain.model.LaunchModel
+
 data class LaunchDtoItem(
     val auto_update: Boolean,
     val capsules: List<String>,
@@ -29,3 +31,35 @@ data class LaunchDtoItem(
     val upcoming: Boolean,
     val window: Int
 )
+
+fun LaunchDtoItem.toLaunchModel(): LaunchModel{
+    return LaunchModel(
+        autoUpdate = auto_update,
+        capsules = capsules,
+        cores = cores,
+        crew = crew,
+        dateLocal = date_local,
+        datePrecision = date_precision,
+        dateUnix = date_unix,
+        dateUtc = date_utc,
+        details = details,
+        failures = failures,
+        fairings = fairings,
+        flightNumber = flight_number,
+        id = id,
+        launchLibraryId = launch_library_id,
+        launchpad = launchpad,
+        links = links,
+        name = name,
+        net = net,
+        payloads = payloads,
+        rocket = rocket,
+        ships = ships,
+        staticFireDateUnix = static_fire_date_unix,
+        staticFireDateUtc = static_fire_date_utc,
+        success = success,
+        tbd = tbd,
+        upcoming = upcoming,
+        window = window
+    )
+}
