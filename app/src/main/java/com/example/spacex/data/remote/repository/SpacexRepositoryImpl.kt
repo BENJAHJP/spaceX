@@ -1,5 +1,6 @@
 package com.example.spacex.data.remote.repository
 
+import com.example.spacex.data.remote.api.SpacexApi
 import com.example.spacex.data.remote.dto.CapsuleDto
 import com.example.spacex.data.remote.dto.CapsuleDtoItem
 import com.example.spacex.data.remote.dto.CompanyDto
@@ -29,109 +30,109 @@ import com.example.spacex.domain.repository.SpacexRepository
 import javax.inject.Inject
 
 class SpacexRepositoryImpl @Inject constructor(
-    private val spacexRepository: SpacexRepository
+    private val spacexApi: SpacexApi
 ): SpacexRepository {
     override suspend fun getAllLaunches(): LaunchDto {
-        return spacexRepository.getAllLaunches()
+        return spacexApi.getAllLaunches()
     }
 
     override suspend fun getLaunchesById(id: String): LaunchDtoItem {
-        return spacexRepository.getLaunchesById(id)
+        return spacexApi.getLaunchesById(id)
     }
 
     override suspend fun getAllCapsules(): CapsuleDto {
-        return spacexRepository.getAllCapsules()
+        return spacexApi.getAllCapsules()
     }
 
     override suspend fun getCapsuleById(id: String): CapsuleDtoItem {
-        return spacexRepository.getCapsuleById(id)
+        return spacexApi.getCapsuleById(id)
     }
 
     override suspend fun getCompanyInfo(): CompanyDto {
-        return spacexRepository.getCompanyInfo()
+        return spacexApi.getCompanyInfo()
     }
 
     override suspend fun getAllCores(): CoreDto {
-        return spacexRepository.getAllCores()
+        return spacexApi.getAllCores()
     }
 
     override suspend fun getCoreById(id: String): CoreDtoItem {
-        return spacexRepository.getCoreById(id)
+        return spacexApi.getCoreById(id)
     }
 
     override suspend fun getAllCrews(): CrewDto {
-        return spacexRepository.getAllCrews()
+        return spacexApi.getAllCrews()
     }
 
     override suspend fun getCrewById(id: String): CrewDtoItem {
-        return spacexRepository.getCrewById(id)
+        return spacexApi.getCrewById(id)
     }
 
     override suspend fun getAllDragons(): DragonDto {
-        return spacexRepository.getAllDragons()
+        return spacexApi.getAllDragons()
     }
 
     override suspend fun getDragonById(id: String): DragonDtoItem {
-        return spacexRepository.getDragonById(id)
+        return spacexApi.getDragonById(id)
     }
 
     override suspend fun getAllLandPads(): LandpadDto {
-        return spacexRepository.getAllLandPads()
+        return spacexApi.getAllLandPads()
     }
 
     override suspend fun getLandPadById(id: String): LandpadDtoItem {
-        return spacexRepository.getLandPadById(id)
+        return spacexApi.getLandPadById(id)
     }
 
     override suspend fun getAllLaunchPads(): LaunchPadDto {
-        return spacexRepository.getAllLaunchPads()
+        return spacexApi.getAllLaunchPads()
     }
 
     override suspend fun getLaunchPadById(id: String): LaunchDtoItem {
-        return spacexRepository.getLaunchesById(id)
+        return spacexApi.getLaunchesById(id)
     }
 
     override suspend fun getAllPayloads(): PayloadDto {
-        return spacexRepository.getAllPayloads()
+        return spacexApi.getAllPayloads()
     }
 
     override suspend fun getPayloadById(id: String): PayloadDtoItem {
-        return spacexRepository.getPayloadById(id)
+        return spacexApi.getPayloadById(id)
     }
 
     override suspend fun getRoadster(): RoadsterDto {
-        return spacexRepository.getRoadster()
+        return spacexApi.getRoadster()
     }
 
     override suspend fun getAllRockets(): RocketDto {
-        return spacexRepository.getAllRockets()
+        return spacexApi.getAllRockets()
     }
 
     override suspend fun getRocketById(id: String): RocketDtoItem {
-        return spacexRepository.getRocketById(id)
+        return spacexApi.getRocketById(id)
     }
 
     override suspend fun getAllShips(): ShipDto {
-        return spacexRepository.getAllShips()
+        return spacexApi.getAllShips()
     }
 
     override suspend fun getShipById(id: String): ShipDtoItem {
-        return spacexRepository.getShipById(id)
+        return spacexApi.getShipById(id)
     }
 
     override suspend fun getAllStarLinks(): StarLinkDto {
-        return spacexRepository.getAllStarLinks()
+        return spacexApi.getAllStarLinks()
     }
 
     override suspend fun getStarlinkById(id: String): StarLinkDtoItem {
-        return spacexRepository.getStarlinkById(id)
+        return spacexApi.getStarlinkById(id)
     }
 
     override suspend fun getAllHistory(): HistoryDto {
-        return spacexRepository.getAllHistory()
+        return spacexApi.getAllHistory()
     }
 
     override suspend fun getHistoryById(id: String): HistoryDtoItem {
-        return spacexRepository.getHistoryById(id)
+        return spacexApi.getHistoryById(id)
     }
 }
