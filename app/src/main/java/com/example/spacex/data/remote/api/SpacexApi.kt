@@ -7,8 +7,14 @@ import com.example.spacex.data.remote.dto.CoreDto
 import com.example.spacex.data.remote.dto.CoreDtoItem
 import com.example.spacex.data.remote.dto.Crew
 import com.example.spacex.data.remote.dto.DragonDto
+import com.example.spacex.data.remote.dto.DragonDtoItem
+import com.example.spacex.data.remote.dto.LandpadDto
+import com.example.spacex.data.remote.dto.LandpadDtoItem
 import com.example.spacex.data.remote.dto.LaunchDto
 import com.example.spacex.data.remote.dto.LaunchDtoItem
+import com.example.spacex.data.remote.dto.LaunchPadDto
+import com.example.spacex.data.remote.dto.PayloadDto
+import com.example.spacex.data.remote.dto.PayloadDtoItem
 import retrofit2.http.GET
 import retrofit2.http.Path
 
@@ -61,5 +67,34 @@ interface SpacexApi {
     @GET("v4/dragons/{id}")
     suspend fun getDragonById(
         @Path("id") id: String
-    ): Crew
+    ): DragonDtoItem
+
+    //get landpads
+    @GET("v4/landpads")
+    suspend fun getAllLandPads(): LandpadDto
+
+    @GET("v4/landpads/{id}")
+    suspend fun getLandPadById(
+        @Path("id") id: String
+    ): LandpadDtoItem
+
+    //get launchpad
+    @GET("v4/launchpads")
+    suspend fun getAllLaunchPads(): LaunchPadDto
+
+    @GET("v4/launchpads/{id}")
+    suspend fun getLaunchPadById(
+        @Path("id") id: String
+    ): LaunchDtoItem
+
+    //get payloads
+    @GET("v4/payloads")
+    suspend fun getAllPayloads(): PayloadDto
+
+    @GET("v4/launchpads/{id}")
+    suspend fun getPayloadById(
+        @Path("id") id: String
+    ): PayloadDtoItem
+
+    //
 }
