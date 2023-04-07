@@ -5,7 +5,6 @@ import com.example.spacex.data.remote.dto.CapsuleDtoItem
 import com.example.spacex.data.remote.dto.CompanyDto
 import com.example.spacex.data.remote.dto.CoreDto
 import com.example.spacex.data.remote.dto.CoreDtoItem
-import com.example.spacex.data.remote.dto.Crew
 import com.example.spacex.data.remote.dto.CrewDto
 import com.example.spacex.data.remote.dto.CrewDtoItem
 import com.example.spacex.data.remote.dto.DragonDto
