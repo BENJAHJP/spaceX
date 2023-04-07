@@ -1,5 +1,7 @@
 package com.example.spacex.data.remote.dto
 
+import com.example.spacex.domain.model.PayloadModel
+
 data class PayloadDtoItem(
     val apoapsis_km: Double,
     val arg_of_pericenter: Double,
@@ -30,3 +32,36 @@ data class PayloadDtoItem(
     val semi_major_axis_km: Double,
     val type: String
 )
+
+fun PayloadDtoItem.toPayloadModel(): PayloadModel{
+    return PayloadModel(
+        apoapsisKm = apoapsis_km,
+        argOfPericenter = arg_of_pericenter,
+        customers = customers,
+        dragon = dragon,
+        eccentricity = eccentricity,
+        epoch = epoch,
+        id = id,
+        inclinationDeg = inclination_deg,
+        launch = launch,
+        lifespanYears = lifespan_years,
+        longitude = longitude,
+        manufacturers = manufacturers,
+        massKg = mass_kg,
+        massLbs = mass_lbs,
+        meanAnomaly = mean_anomaly,
+        meanMotion = mean_motion,
+        name = name,
+        nationalities = nationalities,
+        noradIds = norad_ids,
+        orbit = orbit,
+        periapsisKm = periapsis_km,
+        periodMin = period_min,
+        raan = raan,
+        referenceSystem = reference_system,
+        regime = regime,
+        reused = reused,
+        semiMajorAxisKm = semi_major_axis_km,
+        type = type
+    )
+}
